@@ -572,7 +572,7 @@ html {
     top: 0;
     left: 50%;
     width: 100%;
-    max-width: 1920px;
+    max-width: 1280px;
     height: 100vh;
     transform: translateX(-50%);
     background-size: cover;
@@ -600,10 +600,11 @@ html {
       .contents .background .bg-video.on {
         opacity: 1; }
   .contents .space {
+    overflow: hidden;
     position: absolute;
     top: 0;
     left: 50%;
-    width: 100%;
+    width: 1280px;
     margin: 0 auto;
     height: 100%;
     transform: translateX(-50%);
