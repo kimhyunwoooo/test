@@ -313,7 +313,6 @@ function PageIndex() {
             },
             on: {
                 slideChange: function (swiper) {
-                    console.log('changed');
                     $('.ssgo-text__list li').removeClass('on');
                     $(`.ssgo-text__list li[data-index="${swiper.realIndex}"]`).addClass('on');
                 }
@@ -585,7 +584,7 @@ function PageIndex() {
 
     function resetStars() {
         stars = Array.from({ length: 100 }, () => new Star());
-        bigStars = Array.from({ length: 20 }, () => new BigStar());
+        bigStars = Array.from({ length: 10 }, () => new BigStar());
     }
 
     function starInit() {
@@ -595,7 +594,7 @@ function PageIndex() {
     }
 
     function maybeCreateShootingStar() {
-        if (shootingStars.length < 10 && Math.random() < 0.005) {
+        if (shootingStars.length < 5 && Math.random() < 0.005) {
             shootingStars.push(new ShootingStar());
         }
     }
