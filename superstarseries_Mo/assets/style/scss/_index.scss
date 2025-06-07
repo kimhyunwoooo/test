@@ -56,10 +56,10 @@
         position: absolute;
         top: 0;
         left: 50%;
-        width: 1920px;
+        width: 100%;
         margin: 0 auto;
         height: 100%;
-        transform: translateX(-960px);
+        transform: translateX(-50%);
 
         background : {
             image: url('#{$imagePath}/bg-space-3.webp');
@@ -72,8 +72,6 @@
         //opacity: 1 !important;
         canvas {
             display: block;
-            width: 100%;
-            height: auto;
         }
         @keyframes rotate {
             0% {
