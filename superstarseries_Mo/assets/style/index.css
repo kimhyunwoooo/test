@@ -600,17 +600,17 @@ html {
       .contents .background .bg-video.on {
         opacity: 1; }
   .contents .space {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 50%;
     width: 1920px;
     margin: 0 auto;
-    height: 440rem;
-    margin-left: -960px;
-    background-image: url("./../images/bg-space-2.webp");
+    height: 100%;
+    transform: translateX(-960px);
+    background-image: url("./../images/bg-space-3.webp");
     background-repeat: no-repeat;
-    background-size: 116.4rem 440rem;
-    background-position: 50% 0;
+    background-size: cover;
+    background-position: 50% 100%;
     transition: transform 0.05s; }
     .contents .space canvas {
       display: block;
@@ -727,7 +727,7 @@ html {
               animation: rotate 3s linear infinite; }
     .contents .space .circle-wrap--type2 {
       position: absolute;
-      bottom: 169rem;
+      bottom: 159rem;
       left: 50%;
       width: 28rem;
       height: 28rem;
@@ -831,7 +831,7 @@ html {
               animation: rotate 3s linear infinite; }
     .contents .space .circle-wrap--type3 {
       position: absolute;
-      bottom: 105rem;
+      bottom: 86rem;
       left: 50%;
       width: 18rem;
       height: 18rem;
@@ -883,6 +883,8 @@ html {
               background-size: cover;
               background-position: 50% 0;
               animation: rotate 3s linear infinite; }
+  .contents .container {
+    position: relative; }
   .contents .section {
     position: relative;
     z-index: 1; }

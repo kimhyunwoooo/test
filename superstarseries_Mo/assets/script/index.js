@@ -394,30 +394,11 @@ function PageIndex() {
         let scrollY = $(window).scrollTop();
         const windowHeight = $(window).height();
         const triggerPoint = windowHeight / 2;
-        const contentHeight = $('body').outerHeight();
-        const backgroundHeight = _.element.spaceWrap.outerHeight();
 
         // opacity 조정
         let opacity = scrollY / triggerPoint;
         opacity = Math.min(Math.max(opacity, 0), 1); // clamp 0~1
         _.element.spaceWrap.css('opacity', opacity);
-
-        // translateY 계산
-        const scrollableDistance = contentHeight - windowHeight;
-        const maxTranslate = backgroundHeight - windowHeight;
-
-        if (scrollableDistance <= 0 || maxTranslate <= 0) {
-            _.element.spaceWrap.css('transform', 'translateY(0)');
-            return;
-        }
-
-        const scrollRatio = scrollY / scrollableDistance;
-        let translateY = scrollRatio * maxTranslate;
-
-        // 오버스크롤 방지: 실제 background 크기 이상으로 이동하지 않게 보정
-        translateY = Math.min(translateY, maxTranslate);
-
-        _.element.spaceWrap.css('transform', `translateY(-${translateY}px)`);
     }
 
     // 별똥별 배경 애니메이션
@@ -615,7 +596,7 @@ function PageIndex() {
     function starInit() {
         starCanvasResize();
         stars = Array.from({ length: 500 }, () => new Star()); // 작은 별 개수
-        bigStars = Array.from({ length: 50 }, () => new BigStar()); // 큰 별 개수
+        bigStars = Array.from({ length: 60 }, () => new BigStar()); // 큰 별 개수
         animate();
     }
 
