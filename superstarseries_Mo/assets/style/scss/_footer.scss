@@ -1,0 +1,34 @@
+/*
+    _footer.scss
+*/
+
+.footer {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    padding: setResMo(60) 0;
+    background: #000;
+    .footer {
+        &--company {
+            display: flex;
+            justify-content: center;
+            margin-bottom: setResMo(36);
+
+            .logo__link {
+                display: block;
+                &--dc {
+                    > img {
+                        width: setResMo(140);
+                    }
+                }
+            }
+        }
+
+        &--copyright {
+            display: block;
+            @include fontSet(setResMo(13), normal, setResMo(20), #a1a1aa);
+            text-align: center;
+        }
+    }
+    //.footer
+}

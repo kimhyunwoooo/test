@@ -1,0 +1,53 @@
+/*
+    _layout.scss
+*/
+
+$basePx: 10px; // 디자인 기준 폰트
+$designWidth: 390px; // 디자인 기준 너비
+
+// 321–767 구간에서 쓰는 vw 값
+$ratioVW: ($basePx / $designWidth) * 100vw; // ≈ 2.5641vw
+
+// 321 px·767 px 지점에서 실제로 몇 px가 되는지 미리 계산
+$fixBelow320: 321px * ($basePx / $designWidth); // ≈ 8.23px
+$fixAbove768: 768px * ($basePx / $designWidth); // ≈ 26.24px
+
+html {
+    /* 0 – 320 px : 321 px에서의 크기를 고정 */
+    font-size: $fixBelow320; // 76923px
+
+    /* 321 – 767 px : 뷰포트 비율 유지 */
+    @media (min-width: 321px) and (max-width: 767px) {
+        font-size: $ratioVW; // ≈ 2.5641vw
+    }
+
+    /* 768 px 이상 : 767 px에서의 크기를 고정 */
+    @media (min-width: 768px) {
+        font-size: $fixAbove768; // ≈ 26.24px
+    }
+
+    body {
+        &.scroll-hidden {
+            overflow: hidden;
+            height: 100%;
+        }
+
+        &.page--fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+
+    .superstar-home {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        min-width: $minWidth;
+        .section {
+            max-width: $maxWidth;
+            margin: 0 auto;
+        }
+    }
+}

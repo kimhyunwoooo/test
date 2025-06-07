@@ -1,0 +1,213 @@
+/*
+    _header.scss
+*/
+
+.header {
+    position: relative;
+    z-index: 99;
+    width: 100%;
+    .header {
+        &__wrap {
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: setResMo(60);
+            background: #000;
+
+            .header__logo {
+                padding-left: setResMo(22);
+                .header-logo__link {
+                    display: block;
+                    > img {
+                        width: auto;
+                        height: setResMo(20);
+                    }
+                }
+            }
+
+            .header__util {
+                display: flex;
+                padding-right: setResMo(15);
+
+                &--lang {
+                    position: relative;
+                    .lang__link {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: setResMo(44);
+                        height: setResMo(44);
+                        > span {
+                            display: block;
+                            width: setResMo(30);
+                            height: setResMo(30);
+                            @include imageBg('icon-lang.svg');
+                        }
+                    }
+                    .select-lang {
+                        display: none;
+                        overflow: hidden;
+                        position: absolute;
+                        top: setResMo(52);
+                        left: setResMo(-28);
+                        width: setResMo(107);
+                        border-radius: setResMo(4);
+                        .lang__list {
+                            width: 100%;
+                            background: #fff;
+                            > li {
+                                width: 100%;
+                                height: setResMo(37);
+                                > a {
+                                    display: block;
+                                    padding-left: setResMo(16);
+                                    @include fontSet(setResMo(17), 600, setResMo(37), #a1a1aa);
+                                }
+                            }
+                        }
+                        @at-root html[lang='ko'] .lang__list > li[data-lang='ko'] > a {
+                            color: #000 !important;
+                        }
+                        @at-root html[lang='en'] .lang__list > li[data-lang='en'] > a {
+                            color: #000 !important;
+                        }
+
+                        &--on {
+                            display: block;
+                            @include AnimationSet(selectLangList, 0.25s, 1, normal, 0s, forwards, cubic-bezier(0.33, 1, 0.68, 1));
+                        }
+                    }
+                }
+                &--menu {
+                    .menu-open__link {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: setResMo(44);
+                        height: setResMo(44);
+                        > span {
+                            display: block;
+                            width: setResMo(30);
+                            height: setResMo(30);
+                            @include imageBg('icon-menu.svg');
+                        }
+                    }
+                }
+            }
+        }
+
+        &__menu {
+            overflow: auto;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            transform: translateX(100%);
+            opacity: 0;
+            transition: transform 0.4s, opacity 0.4s;
+
+            &--open {
+                opacity: 1;
+                transform: translateX(0%);
+            }
+
+            .menu__wrap {
+                position: relative;
+                height: 100%;
+                min-height: setResMo(750);
+                padding-left: setResMo(24);
+            }
+
+            .menu__logo {
+                padding: setResMo(120) 0 setResMo(34);
+
+                @at-root html[lang='en'] .header .header__menu .menu__logo {
+                    padding-bottom: setResMo(35);
+                }
+                .menu-logo__link {
+                    display: block;
+                    width: setResMo(260);
+                }
+            }
+
+            .menu__gnb {
+                .gnb__item {
+                    display: flex;
+                    margin-bottom: setResMo(35);
+
+                    @at-root html[lang='en'] .header .header__menu .menu__gnb .gnb__item {
+                        margin-bottom: setResMo(31);
+                    }
+                    > a {
+                        display: block;
+                        @include fontSet(setResMo(32), bold, setResMo(42), #fff);
+                        letter-spacing: -0.01em;
+
+                        @at-root html[lang='en'] .header .header__menu .menu__gnb .gnb__item > a {
+                            font-size: setResMo(30);
+                        }
+
+                        &.active {
+                            color: #9778ff;
+                        }
+                    }
+                }
+            }
+
+            .menu__social {
+                position: absolute;
+                bottom: setResMo(60);
+                left: setResMo(24);
+                .social__list {
+                    display: flex;
+                    margin-bottom: setResMo(33);
+                    .social__item {
+                        margin-right: setResMo(24);
+                        .sns__link {
+                            display: block;
+                            width: setResMo(32);
+                            height: setResMo(32);
+                            &--tw {
+                                width: setResMo(24);
+                                height: setResMo(24);
+                                margin-top: setResMo(4);
+                                @include imageBg('icon-twitter.svg');
+                            }
+                            &--in {
+                                @include imageBg('icon-insta.svg');
+                            }
+                            &--yt {
+                                @include imageBg('icon-youtube.svg');
+                            }
+                        }
+                    }
+                }
+                .social__copyright {
+                    display: block;
+                    @include fontSet(setResMo(13), normal, setResMo(20), #a1a1aa);
+                }
+            }
+
+            .gnb-close__link {
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: setResMo(15) setResMo(22);
+                .icon-menu-close {
+                    display: block;
+                    width: setResMo(30);
+                    height: setResMo(30);
+                    @include imageBg('icon-gnb-close.svg');
+                }
+            }
+        }
+    }
+    //.header__wrap
+}

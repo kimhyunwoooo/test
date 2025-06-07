@@ -1,0 +1,217 @@
+/*
+    _modal.scss
+*/
+
+.modal {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 0;
+    height: 0;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.8);
+
+    .modal__container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        overflow-y: auto;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s, transform 0.6s;
+
+        .modal__wrapper {
+            width: 100%;
+            position: relative;
+        }
+
+        .modal-close__link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: setResMo(-85);
+            right: setResMo(4);
+            width: setResMo(80);
+            height: setResMo(80);
+            > span {
+                display: block;
+                width: setResMo(40);
+                height: setResMo(40);
+                @include imageBg('icon-modal-close.svg');
+            }
+        }
+    }
+
+    &--goods {
+        .goods-detail__wrap {
+            width: 100%;
+            .goods-photo {
+                overflow: hidden;
+                width: setResMo(340);
+                height: setResMo(191);
+                margin: 0 auto;
+                border-radius: setResMo(20);
+                background : {
+                    repeat: no-repeat;
+                    size: cover;
+                    position: 50% 50%;
+                }
+
+                @for $i from 1 through 15 {
+                    &--#{$i} {
+                        background: {
+                            image: url('#{$imagePath}/goods/img-goods-#{$i}.webp');
+                        }
+                    }
+                }
+            }
+        }
+
+        .swiper-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .goods-photo--arrow {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: setResMo(67);
+                height: setResMo(78);
+                cursor: pointer;
+                > span {
+                    display: block;
+                    width: setResMo(30);
+                    height: setResMo(30);
+                    background : {
+                        image: url('#{$imagePath}/icon-arrow.svg');
+                        repeat: no-repeat;
+                        size: cover;
+                        position: 50% 50%;
+                    }
+                }
+
+                &.next {
+                    > span {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+    }
+
+    &--coming {
+        .modal__container {
+            .modal__wrapper {
+                width: setResMo(340);
+                padding: setResMo(24);
+                box-sizing: border-box;
+                background: #fff;
+                border-radius: setResMo(16);
+                .msg {
+                    padding: setResMo(13) 0;
+                    margin-bottom: setResMo(16);
+                    @include fontSet(setResMo(17), 600, setResMo(30), #27272a);
+                    text-align: center;
+                }
+
+                .modal-confirm__link {
+                    display: block;
+                    width: 100%;
+                    height: setResMo(56);
+                    background: #704de3;
+                    border-radius: setResMo(28);
+                    .text {
+                        @include fontSet(setResMo(16), 600, setResMo(56), #ffffff);
+                    }
+                }
+            }
+        }
+    }
+    //.modal--coming
+
+    &--reg {
+        .modal__container {
+            .modal__wrapper {
+                position: relative;
+                width: setResMo(340);
+                padding: setResMo(24);
+                box-sizing: border-box;
+                background: #fff;
+                border-radius: setResMo(16);
+            }
+
+            .reg__wrap {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding-top: setResMo(40);
+                .reg-icon {
+                    width: setResMo(90);
+                    height: setResMo(90);
+                    margin-bottom: setResMo(16);
+                }
+                .reg__title {
+                    display: block;
+                    margin-bottom: setResMo(16);
+                    @include fontSet(setResMo(32), bold, setResMo(35), #27272a);
+                    letter-spacing: -0.02em;
+                    text-align: center;
+                }
+                .reg__text {
+                    margin-bottom: setResMo(32);
+                    @include fontSet(setResMo(18), 600, setResMo(25), #52525b);
+                    letter-spacing: -0.01em;
+                    text-align: center;
+                }
+                .reg__link {
+                    display: block;
+                    width: 100%;
+                    height: setResMo(56);
+                    background: #18181b;
+                    border-radius: setResMo(28);
+                    > span {
+                        display: block;
+                        @include fontSet(setResMo(18), 600, setResMo(54), #ffffff);
+                        text-align: center;
+                    }
+                }
+            }
+
+            .modal-reg__link--close {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top: setResMo(8);
+                right: setResMo(8);
+                width: setResMo(72);
+                height: setResMo(72);
+                > span {
+                    display: block;
+                    width: setResMo(40);
+                    height: setResMo(40);
+                    @include imageBg('icon-reg-close.svg');
+                }
+            }
+        }
+    }
+
+    &--on {
+        width: 100%;
+        height: 100%;
+        .modal__container {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+}

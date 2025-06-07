@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="당신의 최애 K-POP 아티스트의 음악을 리듬 게임으로! 다양한 슈퍼스타 시리즈를 만나보세요." />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+        <meta
+            name="keywords"
+            content="슈퍼스타, 슈퍼스타 시리즈, 슈퍼스타 게임, 슈퍼스타 게임, 리듬게임, Kpop 리듬게임, 슈퍼스타 오피셜, 리듬게임 추천, 음악 게임, 모바일 리듬게임, 아이돌 리듬게임, 달콤소프트, 달콤, 달콤소프트 리듬게임, 달콤소프트 오피셜, SM 리듬게임, 슈스엠, 슈퍼스타 SM, NCT 리듬게임, 엔시티 리듬게임, aespa 리듬게임, 에스파 리듬게임, RIIZE 리듬게임, 라이즈 리듬게임, JYP리듬게임, 슈스제, 슈퍼스타 JYP, TWICE 리듬게임, 트와이스 리듬게임, SKZ 리듬게임, 스키즈 리듬게임, 스트레이키즈 리듬게임, STARSHIP리듬게임, 슈퍼스타 STARSHIP, 슈스쉽, IVE 리듬게임, 아이브 리듬게임, ATEEZ 리듬게임, 슈퍼스타 ATEEZ, 슈퍼스타 에이티즈, 에이티즈 리듬게임, 슈스티즈, STAYC 리듬게임, 스테이씨 리듬게임, 슈퍼스타 STAYC, 슈퍼스타 스테이씨, 슈스테, WAKEONE 리듬게임, 슈퍼스타 WAKEONE, 슈퍼스타 웨이크원, 제베원 리듬게임, ZB1 리듬게임, 제로베이스원 리듬게임, 웨이크원 리듬게임, 슈스원, 케플러 리듬게임, Kep1er 리듬게임, 한정테마, 한정카드"
+        />
+        <!-- openGraph -->
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="SUPERSTAR" />
+        <meta property="og:description" content="당신의 최애 K-POP 아티스트의 음악을 리듬 게임으로! 다양한 슈퍼스타 시리즈를 만나보세요." />
+        <meta property="og:image" content="./assets/images/img-og.jpg" />
+        <meta property="og:url" content="https://superstarseries.io" />
+        <!-- twitter -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="SUPERSTAR" />
+        <meta name="twitter:description" content="당신의 최애 K-POP 아티스트의 음악을 리듬 게임으로! 다양한 슈퍼스타 시리즈를 만나보세요." />
+        <meta name="twitter:image" content="./assets/images/img-og.jpg" />
+        <meta name="twitter:domain" content="https://superstarseries.io" />
+        <title>SUPERSTAR</title>
+        <link rel="apple-touch-icon" href="./assets/images/favicon/apple-touch-icon.png" />
+        <link rel="shortcut icon" type="image/x-icon" href="./assets/images/favicon/favicon.ico" />
+        <link href="./assets/style/index.css" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script>
+            // 스토어 링크 맵핑
+            let storeLink = {
+                app: 'https://apps.apple.com/kr/developer/dalcomsoft-inc/id890937535?see-all=i-phonei-pad-apps',
+                google: 'https://play.google.com/store/games?hl=ko'
+            };
+        </script>
+        <script type="text/javascript" src="./assets/script/index.js"></script>
+    </head>
+
+    <body>
+        <div id="superstarHome" class="superstar-home">
+            <header role="banner" class="header">
+                <div class="header__wrap">
+                    <h1 class="header__logo">
+                        <a href="javascript:void(0);" class="header-logo__link">
+                            <img src="./assets/images/img-logo-superstar.svg" alt="SUPER STAR" />
+                        </a>
+                    </h1>
+                    <div class="header__util">
+                        <div class="header__util--lang">
+                            <a href="javascript:void(0);" role="button" class="lang__link">
+                                <span class="skip">언어 선택</span>
+                            </a>
+                            <div class="select-lang">
+                                <ul class="lang__list">
+                                    <!-- memo - html 태그의 lang 속성에 따라 활성화 표시됨 -->
+                                    <li class="lang__item" data-lang="ko">
+                                        <a href="index.html"> KOR </a>
+                                    </li>
+                                    <li class="lang__item" data-lang="en">
+                                        <a href="index_en.html"> ENG </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="header__util--menu">
+                            <a href="javascript:void(0);" class="menu-open__link">
+                                <span class="skip">메뉴 열기</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- // .header__wrap -->
+
+                <div class="header__menu">
+                    <div class="menu__wrap">
+                        <h2 class="menu__logo">
+                            <a href="#superstarHome" class="menu-logo__link">
+                                <img src="./assets/images/img-logo-superstar.svg" alt="SUPER STAR" />
+                            </a>
+                        </h2>
+
+                        <nav id="gnb" class="menu__gnb">
+                            <ul class="gnb__list">
+                                <li class="gnb__item">
+                                    <a href="#sectionGame">
+                                        <span class="text">게임소개</span>
+                                    </a>
+                                </li>
+                                <li class="gnb__item">
+                                    <a href="#sectionSeries">
+                                        <span class="text">시리즈</span>
+                                    </a>
+                                </li>
+                                <li class="gnb__item">
+                                    <a href="#sectionGoods">
+                                        <span class="text">이벤트&굿즈</span>
+                                    </a>
+                                </li>
+                                <li class="gnb__item">
+                                    <a href="#sectionSsgo">
+                                        <span class="text">슈퍼스타 GO</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                        <div class="menu__social">
+                            <ul class="social__list">
+                                <li class="social__item">
+                                    <a href="https://x.com/SuperStar_GL" class="sns__link sns__link--tw" target="_blank">
+                                        <span class="skip">X</span>
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a href="https://www.instagram.com/superstar_gl/" class="sns__link sns__link--in" target="_blank">
+                                        <span class="skip">instagram</span>
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a href="https://www.youtube.com/@DALCOMSOFT" class="sns__link sns__link--yt" target="_blank">
+                                        <span class="skip">youtube</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <small class="social__copyright">Copyright© 2014 DALCOMSOFT. All rights reserved.</small>
+                        </div>
+                    </div>
+
+                    <a href="javascript:void(0);" class="gnb-close__link">
+                        <span class="icon-menu-close">메뉴 닫기</span>
+                    </a>
+                </div>
+                <!-- // .header__menu -->
+            </header>
+            <!-- // .header -->
+
+            <div class="contents">
+                <div class="background">
+                    <div class="bg-video">
+                        <video id="videoMain" class="video" preload="auto" playsinline loop muted autoplay></video>
+                    </div>
+                </div>
+                <div class="space">
+                    <canvas id="starfield"></canvas>
+                    <div class="circle-wrap--type1">
+                        <div class="circle-big">
+                            <div class="circle-item circle-item--1">
+                                <span></span>
+                            </div>
+                            <div class="circle-item circle-item--2">
+                                <span></span>
+                            </div>
+                            <div class="circle-item circle-item--3">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="circle-small">
+                            <div class="circle-item circle-item--1">
+                                <span></span>
+                            </div>
+                            <div class="circle-item circle-item--2">
+                                <span></span>
+                            </div>
+                            <div class="circle-item circle-item--3">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="circle-wrap--type2">
+                        <div class="circle-big">
+                            <div class="circle-item circle-item--1">
+                                <span></span>
+                            </div>
+                            <div class="circle-item circle-item--2">
+                                <span></span>
+                            </div>
+                            <div class="circle-item circle-item--3">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="circle-small">
+                            <div class="circle-item circle-item--1">
+                                <span></span>
+                            </div>
+                            <div class="circle-item circle-item--2">
+                                <span></span>
+                            </div>
+                            <div class="circle-item circle-item--3">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="circle-wrap--type3">
+                        <div class="circle-big">
+                            <div class="circle-item circle-item--1">
+                                <span></span>
+                            </div>
+                            <div class="circle-item circle-item--2">
+                                <span></span>
+                            </div>
+                            <div class="circle-item circle-item--3">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="section section--visual">
+                        <div class="visual-head"></div>
+                        <div class="visual-main">
+                            <h2>
+                                <img src="./assets/images/img-main-superstar.svg" alt="SUPER STAR" />
+                            </h2>
+                            <div class="store-btn__wrap">
+                                <!-- memo - storeLink 변수를 통하여 각 스토어별 자동 링크값 설정 -->
+                                <a href="#" target="_blank" class="store__link store__link--google" data-store="google">
+                                    <span class="btn">
+                                        <span class="google">Google Play</span>
+                                        <span class="arrow"></span>
+                                    </span>
+                                </a>
+                                <a href="#" target="_blank" class="store__link store__link--app" data-store="app">
+                                    <span class="btn">
+                                        <span class="app">App Store</span>
+                                        <span class="arrow"></span>
+                                    </span>
+                                </a>
+                            </div>
+
+                            <div class="superstar-btn__wrap">
+                                <a href="https://superstarstore.net/" target="_blank" class="store__link store__link--superstarstore">
+                                    <span class="btn">
+                                        <span class="superstar">
+                                            <span class="icon"></span>
+                                            <span class="text">슈퍼스타 스토어</span>
+                                        </span>
+                                        <span class="arrow"></span>
+                                    </span>
+                                </a>
+                                <!-- memo - 비활성(클릭시 coming soon 모달 오픈)상태인 경우 data-state 값 'coming' -->
+                                <!-- memo - 활성화 시 href 링크값 추가 및 data-state 값 삭제 -->
+                                <a href="javascript:void(0);" class="store__link store__link--superstargo" data-state="coming">
+                                    <span class="btn">
+                                        <span class="superstar">
+                                            <span class="icon"></span>
+                                            <span class="text">슈퍼스타 GO</span>
+                                        </span>
+                                        <span class="arrow"></span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="visual-scroll">
+                            <span class="skip">scroll down</span>
+                        </div>
+                    </div>
+
+                    <div class="section--body">
+                        <div id="sectionGame" class="section section--game">
+                            <h3 class="section__title">
+                                <span>게임소개</span>
+                            </h3>
+
+                            <div class="game-text__wrap">
+                                <p data-index="0" class="on">좋아하는 곡을 선택해<br />슈퍼스타 게임을 플레이해 보세요.</p>
+                                <p data-index="1">비트에 맞춰 노트를 터치하며<br />최고의 플레이를 완성하세요.</p>
+                                <p data-index="2">리그에 참여하여 점수를 올리고<br />더 높은 티어에 도전하세요.</p>
+                                <p data-index="3">최애 아티스트의 한정 테마를 모아<br />컬렉션을 완성해 보세요.</p>
+                                <p data-index="4">미션을 클리어하면<br />한정 테마와 다양한 보상을 받을 수 있어요.</p>
+                            </div>
+
+                            <div class="game-img__wrap">
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide game-section">
+                                            <div class="game-screenshot game-screenshot--1"></div>
+                                        </div>
+                                        <div class="swiper-slide game-section">
+                                            <div class="game-screenshot game-screenshot--2"></div>
+                                        </div>
+                                        <div class="swiper-slide game-section">
+                                            <div class="game-screenshot game-screenshot--3"></div>
+                                        </div>
+                                        <div class="swiper-slide game-section">
+                                            <div class="game-screenshot game-screenshot--4"></div>
+                                        </div>
+                                        <div class="swiper-slide game-section">
+                                            <div class="game-screenshot game-screenshot--5"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="swiper-nav">
+                                        <div class="pagination"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //.section--game -->
+
+                        <div id="sectionSeries" class="section section--series">
+                            <h3 class="section__title">
+                                <span>시리즈</span>
+                            </h3>
+
+                            <div class="series-thumb__wrapper">
+                                <div class="series-thumb--arrow prev">
+                                    <span></span>
+                                </div>
+
+                                <div class="swiper series-thumb">
+                                    <div class="swiper-wrapper">
+                                        <div class="series-thumb__item swiper-slide" data-group="sm">
+                                            <img src="./assets/images/series-artist/icon-sm.svg" alt="SUPERSTAR SMTOWN" />
+                                        </div>
+                                        <div class="series-thumb__item swiper-slide" data-group="jyp">
+                                            <img src="./assets/images/series-artist/icon-jyp.svg" alt="SUPERSTAR JYPNATION" />
+                                        </div>
+                                        <div class="series-thumb__item swiper-slide" data-group="starship">
+                                            <img src="./assets/images/series-artist/icon-sss.svg" alt="SUPERSTAR STARSHIP" />
+                                        </div>
+                                        <div class="series-thumb__item swiper-slide" data-group="ateez">
+                                            <img src="./assets/images/series-artist/icon-ssat.svg" alt="SUPERSTAR ATEEZ" />
+                                        </div>
+                                        <div class="series-thumb__item swiper-slide" data-group="stayc">
+                                            <img src="./assets/images/series-artist/icon-sssc.svg" alt="SUPERSTAR STAYC" />
+                                        </div>
+                                        <div class="series-thumb__item swiper-slide" data-group="wakeone">
+                                            <img src="./assets/images/series-artist/icon-sswo.svg" alt="SUPERSTAR WAKEONE" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="series-thumb--arrow next">
+                                    <span></span>
+                                </div>
+                            </div>
+
+                            <div class="series-detail__wrapper">
+                                <div class="series-detail series-detail--sm on" data-group="sm">
+                                    <h4 class="skip">SMTOWN</h4>
+                                    <ul class="detail-group__list">
+                                        <li>
+                                            <a href="javascript:void(0);" class="group__link on" data-index="0">
+                                                <span class="skip">SHINee</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="group__link" data-index="1">
+                                                <span class="skip">RedVelvet</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="group__link" data-index="2">
+                                                <span class="skip">NCT127</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="group__link" data-index="3">
+                                                <span class="skip">NCTDREAM</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="group__link" data-index="4">
+                                                <span class="skip">æspa</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="group__link" data-index="5">
+                                                <span class="skip">RIIZE</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="group__link" data-index="6">
+                                                <span class="skip">NCTWISH</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="group__link" data-index="7">
+                                                <span class="skip">Hearts2Hearts</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                    <ul class="detail-artist__list">
+                                        <li class="on" data-index="0">
+                                            <strong>SHIN<span class="shinee">ee</span></strong>
+                                            <img src="./assets/images/series-artist/SM/SHINee.webp" alt="SHINee" />
+                                        </li>
+                                        <li data-index="1">
+                                            <strong>Red Velvet</strong>
+                                            <img src="./assets/images/series-artist/SM/RedVelvet.webp" alt="RedVelvet" />
+                                        </li>
+                                        <li data-index="2">
+                                            <strong>NCT 127</strong>
+                                            <img src="./assets/images/series-artist/SM/NCT127.webp" alt="NCT127" />
+                                        </li>
+                                        <li data-index="3">
+                                            <strong>NCT DREAM</strong>
+                                            <img src="./assets/images/series-artist/SM/NCTDREAM.webp" alt="NCTDREAM" />
+                                        </li>
+                                        <li data-index="4">
+                                            <strong>æspa</strong>
+                                            <img src="./assets/images/series-artist/SM/æspa.webp" alt="æspa" />
+                                        </li>
+                                        <li data-index="5">
+                                            <strong>RIIZE</strong>
+                                            <img src="./assets/images/series-artist/SM/RIIZE.webp" alt="RIIZE" />
+                                        </li>
+                                        <li data-index="6">
+                                            <strong>NCT WISH</strong>
+                                            <img src="./assets/images/series-artist/SM/NCTWISH.webp" alt="NCTWISH" />
+                                        </li>
+                                        <li data-index="7">
+                                            <strong>Hearts2Hearts</strong>
+                                            <img src="./assets/images/series-artist/SM/Hearts2Hearts.webp" alt="Hearts2Hearts" />
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="series-detail series-detail--jyp" data-group="jyp">
+                                    <h4 class="skip">JYPNATION</h4>
+                                    <ul class="detail-group__list">
+                                        <li>
+                                            <a href="javascript:void(0);" class="group__link on" data-index="0">
+                                                <span class="skip">DAY6</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="group__link" data-index="1">
+                                                <span class="skip">TWICE</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="group__link" data-index="2">
+                                                <span class="skip">StrayKids</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="group__link" data-index="3">
+                                                <span class="skip">ITZY</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="group__link" data-index="4">
+                                                <span class="skip">NMIXX</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="group__link" data-index="5">
+                                                <span class="skip">KickFlip</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                    <ul class="detail-artist__list">
+                                        <li class="on" data-index="0">
+                                            <strong>DAY6</strong>
+                                            <img src="./assets/images/series-artist/JYP/DAY6.webp" alt="DAY6" />
+                                        </li>
+                                        <li data-index="1">
+                                            <strong>TWICE</strong>
+                                            <img src="./assets/images/series-artist/JYP/TWICE.webp" alt="TWICE" />
+                                        </li>
+                                        <li data-index="2">
+                                            <strong>Stray Kids</strong>
+                                            <img src="./assets/images/series-artist/JYP/StrayKids.webp" alt="StrayKids" />
+                                        </li>
+                                        <li data-index="3">
+                                            <strong>ITZY</strong>
+                                            <img src="./assets/images/series-artist/JYP/ITZY.webp" alt="ITZY" />
+                                        </li>
+                                        <li data-index="4">
+                                            <strong>NMIXX</strong>
+                                            <img src="./assets/images/series-artist/JYP/NMIXX.webp" alt="NMIXX" />
+                                        </li>
+                                        <li data-index="5">
+                                            <strong>KickFlip</strong>
+                                            <img src="./assets/images/series-artist/JYP/KickFlip.webp" alt="KickFlip" />
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="series-detail series-detail--sss" data-group="starship">
+                                    <h4 class="skip">STARSHIP</h4>
+                                    <ul class="detail-group__list">
+                                        <li>
+                                            <a href="javascript:void(0);" class="group__link on" data-index="0">
+                                                <span class="skip">MONSTAX</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="group__link" data-index="1">
+                                                <span class="skip">WJSN</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="group__link" data-index="2">
+                                                <span class="skip">CRAVITY</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="group__link" data-index="3">
+                                                <span class="skip">IVE</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="group__link" data-index="4">
+                                                <span class="skip">KiiiKiii</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                    <ul class="detail-artist__list">
+                                        <li class="on" data-index="0">
+                                            <strong>MONSTA X</strong>
+                                            <img src="./assets/images/series-artist/SSS/MONSTAX.webp" alt="MONSTAX" />
+                                        </li>
+                                        <li data-index="1">
+                                            <strong>WJSN</strong>
+                                            <img src="./assets/images/series-artist/SSS/WJSN.webp" alt="WJSN" />
+                                        </li>
+                                        <li data-index="2">
+                                            <strong>CRAVITY</strong>
+                                            <img src="./assets/images/series-artist/SSS/CRAVITY.webp" alt="CRAVITY" />
+                                        </li>
+                                        <li data-index="3">
+                                            <strong>IVE</strong>
+                                            <img src="./assets/images/series-artist/SSS/IVE.webp" alt="IVE" />
+                                        </li>
+                                        <li data-index="4">
+                                            <strong>KiiiKiii</strong>
+                                            <img src="./assets/images/series-artist/SSS/KiiiKiii.webp" alt="KiiiKiii" />
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="series-detail series-detail--ssat" data-group="ateez">
+                                    <h4 class="skip">ATEEZ</h4>
+                                    <ul class="detail-group__list">
+                                        <li>
+                                            <a href="javascript:void(0);" class="group__link on" data-index="0">
+                                                <span class="skip">ATEEZ</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="group__link" data-index="1">
+                                                <span class="skip">ATEEZ</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="group__link" data-index="2">
+                                                <span class="skip">ATEEZ</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                    <ul class="detail-artist__list">
+                                        <li class="on" data-index="0">
+                                            <strong>ATEEZ</strong>
+                                            <img src="./assets/images/series-artist/SSAT/ATEEZ1.webp" alt="ATEEZ" />
+                                        </li>
+                                        <li data-index="1">
+                                            <strong>ATEEZ</strong>
+                                            <img src="./assets/images/series-artist/SSAT/ATEEZ2.webp" alt="ATEEZ" />
+                                        </li>
+                                        <li data-index="2">
+                                            <strong>ATEEZ</strong>
+                                            <img src="./assets/images/series-artist/SSAT/ATEEZ3.webp" alt="ATEEZ" />
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="series-detail series-detail--sssc" data-group="stayc">
+                                    <h4 class="skip">STAYC</h4>
+                                    <ul class="detail-group__list">
+                                        <li>
+                                            <a href="javascript:void(0);" class="group__link on" data-index="0">
+                                                <span class="skip">STAYC</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="group__link" data-index="1">
+                                                <span class="skip">STAYC</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="group__link" data-index="2">
+                                                <span class="skip">STAYC</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                    <ul class="detail-artist__list">
+                                        <li class="on" data-index="0">
+                                            <strong>STAYC</strong>
+                                            <img src="./assets/images/series-artist/SSSC/STAYC1.webp" alt="STAYC" />
+                                        </li>
+                                        <li data-index="1">
+                                            <strong>STAYC</strong>
+                                            <img src="./assets/images/series-artist/SSSC/STAYC2.webp" alt="STAYC" />
+                                        </li>
+                                        <li data-index="2">
+                                            <strong>STAYC</strong>
+                                            <img src="./assets/images/series-artist/SSSC/STAYC3.webp" alt="STAYC" />
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="series-detail series-detail--sswo" data-group="wakeone">
+                                    <h4 class="skip">WAKEONE</h4>
+                                    <ul class="detail-group__list">
+                                        <li>
+                                            <a href="javascript:void(0);" class="group__link on" data-index="0">
+                                                <span class="skip">ZEROBASEONE</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="group__link" data-index="1">
+                                                <span class="skip">Kep1er</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                    <ul class="detail-artist__list">
+                                        <li class="on" data-index="0">
+                                            <strong>ZEROBASEONE</strong>
+                                            <img src="./assets/images/series-artist/SSWO/ZEROBASEONE.webp" alt="ZEROBASEONE" />
+                                        </li>
+                                        <li data-index="1">
+                                            <strong>Kep1er</strong>
+                                            <img src="./assets/images/series-artist/SSWO/Kep1er.webp" alt="Kep1er" />
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //.section--series -->
+
+                        <div id="sectionGoods" class="section section--goods">
+                            <h3 class="section__title">
+                                <span>이벤트&굿즈</span>
+                            </h3>
+                            <p class="section__sub-title">게임에서만 만나볼 수 있었던<br />한정 카드를 실물 카드로 만나보세요!</p>
+
+                            <div class="goods-slide__wrap">
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide goods-section--1">
+                                            <div class="goods-item__wrap">
+                                                <a href="javascript:void(0);" class="goods-item goods-item--1" data-index="1">
+                                                    <span class="skip">이벤트 & 굿즈 1번</span>
+                                                </a>
+                                                <a href="javascript:void(0);" class="goods-item goods-item--2" data-index="2">
+                                                    <span class="skip">이벤트 & 굿즈 2번</span>
+                                                </a>
+                                                <a href="javascript:void(0);" class="goods-item goods-item--3" data-index="3">
+                                                    <span class="skip">이벤트 & 굿즈 3번</span>
+                                                </a>
+                                                <a href="javascript:void(0);" class="goods-item goods-item--4" data-index="4">
+                                                    <span class="skip">이벤트 & 굿즈 4번</span>
+                                                </a>
+                                                <a href="javascript:void(0);" class="goods-item goods-item--5" data-index="5">
+                                                    <span class="skip">이벤트 & 굿즈 5번</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide goods-section--2">
+                                            <div class="goods-item__wrap">
+                                                <a href="javascript:void(0);" class="goods-item goods-item--6" data-index="6">
+                                                    <span class="skip">이벤트 & 굿즈 6번</span>
+                                                </a>
+                                                <a href="javascript:void(0);" class="goods-item goods-item--7" data-index="7">
+                                                    <span class="skip">이벤트 & 굿즈 7번</span>
+                                                </a>
+                                                <a href="javascript:void(0);" class="goods-item goods-item--8" data-index="8">
+                                                    <span class="skip">이벤트 & 굿즈 8번</span>
+                                                </a>
+                                                <a href="javascript:void(0);" class="goods-item goods-item--9" data-index="9">
+                                                    <span class="skip">이벤트 & 굿즈 9번</span>
+                                                </a>
+                                                <a href="javascript:void(0);" class="goods-item goods-item--10" data-index="10">
+                                                    <span class="skip">이벤트 & 굿즈 10번</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide goods-section--3">
+                                            <div class="goods-item__wrap">
+                                                <a href="javascript:void(0);" class="goods-item goods-item--11" data-index="11">
+                                                    <span class="skip">이벤트 & 굿즈 11번</span>
+                                                </a>
+                                                <a href="javascript:void(0);" class="goods-item goods-item--12" data-index="12">
+                                                    <span class="skip">이벤트 & 굿즈 12번</span>
+                                                </a>
+                                                <a href="javascript:void(0);" class="goods-item goods-item--13" data-index="13">
+                                                    <span class="skip">이벤트 & 굿즈 13번</span>
+                                                </a>
+                                                <a href="javascript:void(0);" class="goods-item goods-item--14" data-index="14">
+                                                    <span class="skip">이벤트 & 굿즈 14번</span>
+                                                </a>
+                                                <a href="javascript:void(0);" class="goods-item goods-item--15" data-index="15">
+                                                    <span class="skip">이벤트 & 굿즈 15번</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="swiper-nav swiper-nav--type2">
+                                        <div class="pagination"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a href="https://superstarstore.net/" target="_blank" class="superstarstore__link">
+                                <span class="icon"></span>
+                                <span class="text">슈퍼스타 스토어 바로가기</span>
+                            </a>
+                        </div>
+                        <!-- //.section--goods -->
+
+                        <div id="sectionSsgo" class="section section--ssgo">
+                            <h3 class="section__title">
+                                <span>슈퍼스타 GO</span>
+                            </h3>
+                            <ul class="ssgo-text__list">
+                                <li data-index="0" class="on">
+                                    <strong>현장에서만 가질 수 있는 나만의 한정 테마 카드!</strong>
+                                    <p>콘서트와 팬미팅 현장에서만 만나볼 수 있는<br />스페셜 한정 테마 카드!<br />특별한 순간을 카드로 간직하세요.</p>
+                                </li>
+                                <li data-index="1">
+                                    <strong>나만의 최애를 내 손 안에!</strong>
+                                    <p>현장에서 직접 완성하는 나만의 컬렉션!<br />한정 테마 카드를 모으는 재미를 느껴보세요.</p>
+                                </li>
+                                <li data-index="2">
+                                    <strong>온라인과 오프라인에서 모두 만나는<br />스페셜 한정 테마!</strong>
+                                    <p>한정 테마 카드를 실물로 만나볼 수 있는 기회!<br />특별한 경험을 놓치지 마세요.</p>
+                                </li>
+                                <li data-index="3">
+                                    <strong>다양한 공간에서 즐거움을 나눠보세요!</strong>
+                                    <p>나만의 카드 컬렉션을 친구들과 함께 공유하며<br />즐거움을 두 배로! 수집한 카드를 온라인에서 공유할수록<br />그 추억은 더욱 특별해질 거예요.</p>
+                                </li>
+                                <li data-index="4">
+                                    <strong>콘서트의 설렘, 슈퍼스타 GO와 함께 더 특별하게!</strong>
+                                    <p>기다리는 시간까지 즐겁게!<br />콘서트를 앞둔 설레는 순간, 슈퍼스타 GO에서<br />나만의 카드를 수집해 보세요.</p>
+                                </li>
+                            </ul>
+
+                            <div class="ssgo-slide__wrap">
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide ssgo-section--1"></div>
+                                        <div class="swiper-slide ssgo-section--2"></div>
+                                        <div class="swiper-slide ssgo-section--3"></div>
+                                        <div class="swiper-slide ssgo-section--4"></div>
+                                        <div class="swiper-slide ssgo-section--5"></div>
+                                    </div>
+
+                                    <div class="swiper-nav">
+                                        <div class="pagination"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a href="https://hub.superstargo.fun/" target="_blank" class="superstargo__link">
+                                <span class="icon"></span>
+                                <span class="text">슈퍼스타 GO 바로가기</span>
+                            </a>
+                            <!-- memo - 비활성화 타입 -->
+                            <!-- <div class="superstargo__link disabled">
+                                <span class="icon"></span>
+                                <span class="text">슈퍼스타 GO 바로가기</span>
+                            </div> -->
+                        </div>
+                        <!-- //.section--ssgo -->
+                    </div>
+                </div>
+            </div>
+            <!-- // .contents -->
+
+            <footer role="contentinfo" class="footer">
+                <div class="footer--company">
+                    <a href="https://dalcomsoft.com/html/" target="_blank" class="logo__link logo__link--dc">
+                        <img src="./assets/images/img-logo-dalcom.svg" alt="dalcom soft" />
+                    </a>
+                </div>
+
+                <small class="footer--copyright">Copyright© 2014 DALCOMSOFT. All rights reserved.</small>
+            </footer>
+            <!-- // .footer -->
+        </div>
+
+        <!-- modal -->
+        <!-- modal - 커밍 순 -->
+        <div class="modal modal--coming">
+            <div class="modal__container">
+                <div class="modal__wrapper">
+                    <p class="msg">Coming Soon</p>
+
+                    <button type="button" class="modal-confirm__link">
+                        <span class="text">확인</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal - 아이템 굿즈 -->
+        <div class="modal modal--goods">
+            <div class="modal__container">
+                <div class="modal__wrapper">
+                    <div class="goods-detail__wrap">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide goods-detail__item">
+                                    <div class="goods-photo goods-photo--1"></div>
+                                </div>
+                                <div class="swiper-slide goods-detail__item">
+                                    <div class="goods-photo goods-photo--2"></div>
+                                </div>
+                                <div class="swiper-slide goods-detail__item">
+                                    <div class="goods-photo goods-photo--3"></div>
+                                </div>
+                                <div class="swiper-slide goods-detail__item">
+                                    <div class="goods-photo goods-photo--4"></div>
+                                </div>
+                                <div class="swiper-slide goods-detail__item">
+                                    <div class="goods-photo goods-photo--5"></div>
+                                </div>
+                                <div class="swiper-slide goods-detail__item">
+                                    <div class="goods-photo goods-photo--6"></div>
+                                </div>
+                                <div class="swiper-slide goods-detail__item">
+                                    <div class="goods-photo goods-photo--7"></div>
+                                </div>
+                                <div class="swiper-slide goods-detail__item">
+                                    <div class="goods-photo goods-photo--8"></div>
+                                </div>
+                                <div class="swiper-slide goods-detail__item">
+                                    <div class="goods-photo goods-photo--9"></div>
+                                </div>
+                                <div class="swiper-slide goods-detail__item">
+                                    <div class="goods-photo goods-photo--10"></div>
+                                </div>
+                                <div class="swiper-slide goods-detail__item">
+                                    <div class="goods-photo goods-photo--11"></div>
+                                </div>
+                                <div class="swiper-slide goods-detail__item">
+                                    <div class="goods-photo goods-photo--12"></div>
+                                </div>
+                                <div class="swiper-slide goods-detail__item">
+                                    <div class="goods-photo goods-photo--13"></div>
+                                </div>
+                                <div class="swiper-slide goods-detail__item">
+                                    <div class="goods-photo goods-photo--14"></div>
+                                </div>
+                                <div class="swiper-slide goods-detail__item">
+                                    <div class="goods-photo goods-photo--15"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-nav">
+                            <a href="javascript:void(0);" class="goods-photo--arrow prev" data-type="prev">
+                                <span>prev</span>
+                            </a>
+                            <a href="javascript:void(0);" class="goods-photo--arrow next" data-type="next">
+                                <span>next</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="javascript:void(0);" class="modal-close__link" data-modal="goods">
+                        <span class="skip">닫기</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal - 사전예약 -->
+        <div class="modal modal--reg">
+            <div class="modal__container">
+                <div class="modal__wrapper">
+                    <div class="reg__wrap">
+                        <div class="reg-icon">
+                            <img src="./assets/images/series-artist/icon-sswo.svg" alt="SUPERSTAR WAKEONE" />
+                            <!-- 
+                                <img src="./assets/images/series-artist/icon-sm.svg" alt="SUPERSTAR SMTOWN" />
+                                <img src="./assets/images/series-artist/icon-jyp.svg" alt="SUPERSTAR JYPNATION" />
+                                <img src="./assets/images/series-artist/icon-sss.svg" alt="SUPERSTAR STARSHIP" />
+                                <img src="./assets/images/series-artist/icon-ssat.svg" alt="SUPERSTAR ATEEZ" />
+                                <img src="./assets/images/series-artist/icon-sssc.svg" alt="SUPERSTAR STAYC" />
+                            
+                            -->
+                        </div>
+                        <strong class="reg__title">SUPERSTAR<br />CUBE</strong>
+                        <p class="reg__text">지금 바로 사전예약에 참여하세요!</p>
+                        <a href="https://superstarwakeone.dalcomsoft.com/index.html" class="reg__link" target="_blank">
+                            <span>사전예약 바로가기</span>
+                        </a>
+                    </div>
+
+                    <a href="javascript:void(0);" class="modal-reg__link--close">
+                        <span class="skip">닫기</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <!-- memo - 참고 스크립트 -->
+    <script>
+        $(document).ready(function () {
+            // 사전예약 modal open
+            //window.superstar.ui.modal.reg();
+        });
+    </script>
+</html>

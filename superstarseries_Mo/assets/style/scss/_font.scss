@@ -1,0 +1,34 @@
+/*
+    _font.scss
+*/
+
+// noto sans kr
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+// noto sans
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+// Paperlogy
+@import url('https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/Paperlogy.css');
+
+// init
+
+html[lang='en'] {
+    body {
+        &,
+        a,
+        button {
+            @extend %fontLangEn;
+        }
+    }
+}
+
+html[lang='ko'] {
+    body {
+        &,
+        a,
+        button {
+            @extend %fontLangKo;
+        }
+    }
+}
