@@ -413,6 +413,8 @@ function PageIndex() {
         height = container.clientHeight;
         canvas.width = width;
         canvas.height = height;
+
+        resetStars(); // 사이즈 조정 시 별 위치 재설정
     }
 
     // 작은 별 이미지 로드
@@ -420,12 +422,12 @@ function PageIndex() {
     const imagePaths = ['./assets/images/star1.png', './assets/images/star2.png'];
     let imagesLoaded = 0;
 
-    imagePaths.forEach((src, i) => {
+    imagePaths.forEach(src => {
         const img = new Image();
         img.src = src;
         img.onload = () => {
             imagesLoaded++;
-            maybeStart(); // 로딩 완료 후 초기화
+            maybeStart();
         };
         starImages.push(img);
     });
@@ -435,12 +437,12 @@ function PageIndex() {
     const bigImagePaths = ['./assets/images/big-star1.png', './assets/images/big-star2.png'];
     let bigImagesLoaded = 0;
 
-    bigImagePaths.forEach((src, i) => {
+    bigImagePaths.forEach(src => {
         const img = new Image();
         img.src = src;
         img.onload = () => {
             bigImagesLoaded++;
-            maybeStart(); // 로딩 완료 후 초기화
+            maybeStart();
         };
         bigStarImages.push(img);
     });
@@ -459,24 +461,21 @@ function PageIndex() {
         reset() {
             this.x = Math.random() * width;
             this.y = Math.random() * height;
-            this.scale = Math.random() * 0.6 + 0.6; // 0.6 ~ 1.2
+            this.scale = Math.random() * 0.6 + 0.6;
             this.image = starImages[Math.floor(Math.random() * starImages.length)];
-            this.alpha = Math.random() * 0.5 + 0.5; // 0.5 ~ 1
-            //this.alphaChange = (Math.random() * 0.015 + 0.01) * (Math.random() < 0.5 ? -1 : 1); // 빠름
-            this.alphaChange = (Math.random() * 0.005 + 0.005) * (Math.random() < 0.5 ? -1 : 1); // 중간
-            //this.alphaChange = (Math.random() * 0.005 + 0.002) * (Math.random() < 0.5 ? -1 : 1); // 느린 깜박임
+            this.alpha = Math.random() * 0.5 + 0.5;
+            this.alphaChange = (Math.random() * 0.005 + 0.005) * (Math.random() < 0.5 ? -1 : 1);
         }
 
         update() {
             this.alpha += this.alphaChange;
             if (this.alpha >= 1 || this.alpha <= 0.3) {
-                this.alphaChange *= -1; // 방향 반전
+                this.alphaChange *= -1;
             }
         }
 
         draw() {
             const size = 20 * this.scale;
-
             ctx.save();
             ctx.globalAlpha = this.alpha;
             ctx.drawImage(this.image, this.x - size / 2, this.y - size / 2, size, size);
@@ -484,18 +483,17 @@ function PageIndex() {
         }
     }
 
-    // BigStar (큰 별)
     class BigStar {
         constructor() {
             this.reset();
-            this.rotation = 0; // 현재 회전 각도 (radian)
-            this.rotationSpeed = 0.001 + Math.random() * 0.002; // 천천히 회전 (0.001~0.003 rad/frame)
+            this.rotation = 0;
+            this.rotationSpeed = 0.001 + Math.random() * 0.002;
         }
 
         reset() {
             this.x = Math.random() * width;
             this.y = Math.random() * height;
-            this.scale = Math.random() * 0.5 + 0.5; // 0.5 ~ 1.0
+            this.scale = Math.random() * 0.5 + 0.5;
             this.image = bigStarImages[Math.floor(Math.random() * bigStarImages.length)];
             this.alpha = Math.random() * 0.5 + 0.5;
             this.alphaChange = (Math.random() * 0.002 + 0.001) * (Math.random() < 0.5 ? -1 : 1);
@@ -504,23 +502,22 @@ function PageIndex() {
         update() {
             this.alpha += this.alphaChange;
             if (this.alpha >= 1 || this.alpha <= 0.3) this.alphaChange *= -1;
-            this.rotation += this.rotationSpeed; // 회전 각도 업데이트
+            this.rotation += this.rotationSpeed;
         }
 
         draw() {
-            const width = 84 * this.scale;
-            const height = 80 * this.scale;
+            const w = 84 * this.scale;
+            const h = 80 * this.scale;
 
             ctx.save();
             ctx.globalAlpha = this.alpha;
             ctx.translate(this.x, this.y);
             ctx.rotate(this.rotation);
-            ctx.drawImage(this.image, -width / 2, -height / 2, width, height);
+            ctx.drawImage(this.image, -w / 2, -h / 2, w, h);
             ctx.restore();
         }
     }
 
-    // PNG 별 이미지 따로 로드
     const frontStarImage = new Image();
     frontStarImage.src = './assets/images/shooting_star_front.png';
 
@@ -540,19 +537,14 @@ function PageIndex() {
             this.alpha = 1;
 
             this.frontStarSize = 60;
-
-            // 회전 각도 (radian)
             this.rotation = 0;
-            // 회전 속도 (radian/frame), 랜덤으로 약간 다르게 설정 가능
-            this.rotationSpeed = Math.random() * 0.1 - 0.05; // -0.05 ~ 0.05
+            this.rotationSpeed = Math.random() * 0.1 - 0.05;
         }
 
         update() {
             this.x += this.vx;
             this.y += this.vy;
             this.alpha -= 0.01;
-
-            // 회전 업데이트
             this.rotation += this.rotationSpeed;
 
             if (this.alpha <= 0) this.reset();
@@ -561,9 +553,9 @@ function PageIndex() {
         draw() {
             const gradient = ctx.createLinearGradient(this.x, this.y, this.x - this.vx * this.len, this.y - this.vy * this.len);
 
-            gradient.addColorStop(0, 'rgba(255,255,255,0)'); // 꼬리 시작 - 투명도 0
-            gradient.addColorStop(0.1, `rgba(255,255,255,${this.alpha})`); // 10% 지점 - 최대 투명도 (유성 밝기)
-            gradient.addColorStop(1, 'rgba(255,255,255,0)'); // 꼬리 끝 - 투명도 0
+            gradient.addColorStop(0, 'rgba(255,255,255,0)');
+            gradient.addColorStop(0.1, `rgba(255,255,255,${this.alpha})`);
+            gradient.addColorStop(1, 'rgba(255,255,255,0)');
 
             ctx.strokeStyle = gradient;
             ctx.lineWidth = 2;
@@ -572,7 +564,6 @@ function PageIndex() {
             ctx.lineTo(this.x - this.vx * this.len, this.y - this.vy * this.len);
             ctx.stroke();
 
-            // 유성 꼬리 뒤쪽 5% 지점에 회전하는 별 이미지 그리기
             if (frontStarImage.complete) {
                 const offsetX = this.x - this.vx * this.len * 0.01;
                 const offsetY = this.y - this.vy * this.len * 0.01;
@@ -588,20 +579,22 @@ function PageIndex() {
         }
     }
 
-    // 초기화 및 애니메이션
     let stars = [];
     let bigStars = [];
     const shootingStars = [];
 
+    function resetStars() {
+        stars = Array.from({ length: 100 }, () => new Star());
+        bigStars = Array.from({ length: 20 }, () => new BigStar());
+    }
+
     function starInit() {
         starCanvasResize();
-        stars = Array.from({ length: 200 }, () => new Star()); // 작은 별 개수
-        bigStars = Array.from({ length: 30 }, () => new BigStar()); // 큰 별 개수
+        resetStars();
         animate();
     }
 
     function maybeCreateShootingStar() {
-        // 유성 최대 10개까지 허용, 10개가 아니라면 0.5% 확률로 유성 생성
         if (shootingStars.length < 10 && Math.random() < 0.005) {
             shootingStars.push(new ShootingStar());
         }
@@ -631,7 +624,18 @@ function PageIndex() {
         requestAnimationFrame(animate);
     }
 
-    window.addEventListener('resize', starCanvasResize);
+    // 리사이즈 최적화: 300px 이상 변화시에만 적용
+    let lastResizeWidth = window.innerWidth;
+
+    window.addEventListener('resize', () => {
+        const currentWidth = window.innerWidth;
+        const diff = Math.abs(currentWidth - lastResizeWidth);
+
+        if (diff >= 300) {
+            lastResizeWidth = currentWidth;
+            starCanvasResize();
+        }
+    });
 
     // 스크롤 이벤트
     function onScrollWindow() {

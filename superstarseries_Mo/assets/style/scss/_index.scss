@@ -74,6 +74,10 @@
         //opacity: 1 !important;
         canvas {
             display: block;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
         }
         @keyframes rotate {
             0% {
