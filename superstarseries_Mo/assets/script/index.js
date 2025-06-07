@@ -529,7 +529,7 @@ function PageIndex() {
             this.x = Math.random() * width;
             this.y = Math.random() * height;
             this.len = Math.random() * 20 + 30;
-            this.speed = Math.random() * 4 + 3;
+            this.speed = Math.random() * 1.5 + 1.5;
             this.angle = (3 * Math.PI) / 3.5;
             this.vx = Math.cos(this.angle) * this.speed;
             this.vy = Math.sin(this.angle) * this.speed;
