@@ -196,11 +196,10 @@
                 right: setResMo(8);
                 width: setResMo(72);
                 height: setResMo(72);
-                > span {
+                > img {
                     display: block;
                     width: setResMo(40);
                     height: setResMo(40);
-                    @include imageBg('icon-reg-close.svg');
                 }
             }
         }

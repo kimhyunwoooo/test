@@ -1909,14 +1909,10 @@ html {
     right: 0.8rem;
     width: 7.2rem;
     height: 7.2rem; }
-    .modal--reg .modal__container .modal-reg__link--close > span {
+    .modal--reg .modal__container .modal-reg__link--close > img {
       display: block;
       width: 4rem;
-      height: 4rem;
-      background-image: url("./../images/icon-reg-close.svg");
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: 50% 50%; }
+      height: 4rem; }
   .modal--on {
     width: 100%;
     height: 100%; }
