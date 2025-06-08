@@ -530,18 +530,28 @@ function PageIndex() {
         constructor() {
             this.reset();
         }
-
         reset() {
-            this.x = Math.random() * width;
-            this.y = Math.random() * height;
-            this.len = Math.random() * 20 + 30;
+            this.len = Math.random() * 20 + 30; // 90 ~ 160 유성 꼬리 길이
             this.speed = Math.random() * 1.5 + 1.5;
             this.angle = (3 * Math.PI) / 3.5;
             this.vx = Math.cos(this.angle) * this.speed;
             this.vy = Math.sin(this.angle) * this.speed;
-            this.alpha = 1;
 
-            this.frontStarSize = 60;
+            // 유성의 전체 이동 거리를 예측 (alpha 1 → 0까지 이동하는 거리)
+            const maxLifetime = 1 / 0.01; // 매 프레임마다 alpha -= 0.01
+            const moveDistanceX = this.vx * maxLifetime;
+            const moveDistanceY = this.vy * maxLifetime;
+
+            // 시작점 계산: 도착 지점을 캔버스 안에 두기 위해, 이동 거리 만큼 미리 확보
+            const marginX = Math.abs(moveDistanceX) + this.len;
+            const marginY = Math.abs(moveDistanceY) + this.len;
+
+            this.x = Math.random() * (width - marginX) + marginX / 2;
+            this.y = Math.random() * (height - marginY) + marginY / 2;
+
+            this.alpha = 1;
+            this.frontStarSize = 80;
+            this.frontStarScale = Math.random() * 0.7 + 0.3; // 0.3 ~ 1.0배로 조정
             this.rotation = 0;
             this.rotationSpeed = Math.random() * 0.1 - 0.05;
         }
@@ -572,12 +582,13 @@ function PageIndex() {
             if (frontStarImage.complete) {
                 const offsetX = this.x - this.vx * this.len * 0.01;
                 const offsetY = this.y - this.vy * this.len * 0.01;
+                const scaledSize = this.frontStarSize * this.frontStarScale;
 
                 ctx.save();
                 ctx.globalAlpha = this.alpha;
                 ctx.translate(offsetX, offsetY);
                 ctx.rotate(this.rotation);
-                ctx.drawImage(frontStarImage, -this.frontStarSize / 2, -this.frontStarSize / 2, this.frontStarSize, this.frontStarSize);
+                ctx.drawImage(frontStarImage, -scaledSize / 2, -scaledSize / 2, scaledSize, scaledSize);
                 ctx.restore();
                 ctx.globalAlpha = 1;
             }
@@ -589,7 +600,7 @@ function PageIndex() {
     const shootingStars = [];
 
     function resetStars() {
-        stars = Array.from({ length: 100 }, () => new Star());
+        stars = Array.from({ length: 150 }, () => new Star());
         bigStars = Array.from({ length: 10 }, () => new BigStar());
     }
 
@@ -602,6 +613,13 @@ function PageIndex() {
     function maybeCreateShootingStar() {
         // 유성 최대 5개만 노출, 그 이하인 경우 0.5% 확률로 등장
         if (shootingStars.length < 5 && Math.random() < 0.005) {
+            shootingStars.push(new ShootingStar());
+        }
+    }
+
+    function maybeCreateShootingStar() {
+        // 유성 최대 3개만 노출, 그 이하인 경우 0.2% 확률로 등장
+        if (shootingStars.length < 3 && Math.random() < 0.002) {
             shootingStars.push(new ShootingStar());
         }
     }

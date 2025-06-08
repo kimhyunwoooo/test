@@ -77,6 +77,7 @@
             position: absolute;
             top: 0;
             left: 50%;
+            height: 100%;
             transform: translateX(-50%);
         }
         @keyframes rotate {
@@ -93,9 +94,9 @@
             top: setResMo(1370);
             left: 50%;
             z-index: 10;
-            width: setResMo(126);
-            height: setResMo(126);
-            margin-left: setResMo(-200);
+            width: setResMo(146);
+            height: setResMo(146);
+            margin-left: setResMo(-218);
 
             .circle-big {
                 position: relative;
@@ -103,89 +104,77 @@
                 height: 100%;
                 &:before {
                     position: absolute;
-                    width: setResMo(126);
-                    height: setResMo(126);
-                    border: setResMo(2) solid rgba(255, 255, 255, 0.1);
-                    border-radius: 50%;
+                    width: setResMo(146);
+                    height: setResMo(146);
+                    background : {
+                        image: url('#{$imagePath}/bg-planet-circle1.png');
+                        repeat: no-repeat;
+                        size: contain;
+                        position: 50% 50%;
+                    }
                     content: '';
                 }
                 .circle-item {
                     position: absolute;
-                    top: 50%;
-                    left: 0%;
-                    width: setResMo(20);
-                    height: setResMo(20);
-                    margin: setResMo(-10) 0 0 setResMo(-10);
-
-                    transform-origin: setResMo(74) setResMo(11);
-                    > span {
-                        display: block;
-                        width: 100%;
-                        height: 100%;
-                    }
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
 
                     &--1 {
                         animation: rotate 18s linear infinite;
-                        > span {
-                            background : {
-                                image: url('#{$imagePath}/icon-planet1.svg');
-                                repeat: no-repeat;
-                                size: cover;
-                                position: 50% 0;
-                            }
-                            animation: rotate 8s linear infinite;
+                        background : {
+                            image: url('#{$imagePath}/bg-planet-circle1-1.png');
+                            repeat: no-repeat;
+                            size: cover;
+                            position: 50% 50%;
                         }
                     }
                     &--2 {
-                        animation: rotate 15s linear infinite;
-                        > span {
-                            background : {
-                                image: url('#{$imagePath}/icon-planet3.svg');
-                                repeat: no-repeat;
-                                size: cover;
-                                position: 50% 0;
-                            }
-                            animation: rotate 5s linear infinite;
+                        background : {
+                            image: url('#{$imagePath}/bg-planet-circle1-2.png');
+                            repeat: no-repeat;
+                            size: cover;
+                            position: 50% 50%;
                         }
+                        animation: rotate 15s linear infinite;
                     }
                     &--3 {
-                        animation: rotate 11s linear infinite;
-                        > span {
-                            background : {
-                                image: url('#{$imagePath}/icon-planet2.svg');
-                                repeat: no-repeat;
-                                size: cover;
-                                position: 50% 0;
-                            }
-                            animation: rotate 3s linear infinite;
+                        background : {
+                            image: url('#{$imagePath}/bg-planet-circle1-3.png');
+                            repeat: no-repeat;
+                            size: cover;
+                            position: 50% 50%;
                         }
+                        animation: rotate 13s linear infinite;
                     }
                 }
             }
             .circle-small {
                 position: absolute;
                 top: setResMo(-10);
-                left: setResMo(-12);
-                width: setResMo(70);
-                height: setResMo(70);
-                transform: rotate(90deg);
+                left: setResMo(-10);
+                width: setResMo(80);
+                height: setResMo(80);
                 &:before {
                     position: absolute;
-                    width: setResMo(70);
-                    height: setResMo(70);
-                    border: setResMo(2) solid rgba(110, 89, 242, 0.3);
-                    border-radius: 50%;
+                    width: setResMo(80);
+                    height: setResMo(80);
+                    background : {
+                        image: url('#{$imagePath}/bg-planet-circle2.png');
+                        repeat: no-repeat;
+                        size: contain;
+                        position: 50% 50%;
+                    }
                     content: '';
                 }
                 .circle-item {
                     position: absolute;
-                    top: 50%;
+                    top: 0;
                     left: 0%;
-                    width: setResMo(12);
-                    height: setResMo(12);
-                    margin: setResMo(-6) 0 0 setResMo(-6);
+                    width: 100%;
+                    height: 100%;
 
-                    transform-origin: setResMo(42) setResMo(7);
                     > span {
                         display: block;
                         width: 100%;
@@ -193,40 +182,31 @@
                     }
 
                     &--1 {
-                        animation: rotate 8s linear infinite;
-                        > span {
-                            background : {
-                                image: url('#{$imagePath}/icon-planet1.svg');
-                                repeat: no-repeat;
-                                size: cover;
-                                position: 50% 0;
-                            }
-                            animation: rotate 8s linear infinite;
+                        background : {
+                            image: url('#{$imagePath}/bg-planet-circle2-1.png');
+                            repeat: no-repeat;
+                            size: cover;
+                            position: 50% 50%;
                         }
+                        animation: rotate 8s linear infinite;
                     }
                     &--3 {
-                        animation: rotate 13s linear infinite;
-                        > span {
-                            background : {
-                                image: url('#{$imagePath}/icon-planet3.svg');
-                                repeat: no-repeat;
-                                size: cover;
-                                position: 50% 0;
-                            }
-                            animation: rotate 5s linear infinite;
+                        background : {
+                            image: url('#{$imagePath}/bg-planet-circle2-2.png');
+                            repeat: no-repeat;
+                            size: cover;
+                            position: 50% 50%;
                         }
+                        animation: rotate 13s linear infinite;
                     }
                     &--2 {
-                        animation: rotate 10s linear infinite;
-                        > span {
-                            background : {
-                                image: url('#{$imagePath}/icon-planet2.svg');
-                                repeat: no-repeat;
-                                size: cover;
-                                position: 50% 0;
-                            }
-                            animation: rotate 3s linear infinite;
+                        background : {
+                            image: url('#{$imagePath}/bg-planet-circle2-3.png');
+                            repeat: no-repeat;
+                            size: cover;
+                            position: 50% 50%;
                         }
+                        animation: rotate 10s linear infinite;
                     }
                 }
             }
@@ -249,19 +229,66 @@
                     position: absolute;
                     width: setResMo(280);
                     height: setResMo(280);
-                    border: setResMo(2) solid rgba(110, 89, 242, 0.3);
-                    border-radius: 50%;
+                    background : {
+                        image: url('#{$imagePath}/bg-planet-circle3.png');
+                        repeat: no-repeat;
+                        size: contain;
+                        position: 50% 50%;
+                    }
                     content: '';
                 }
                 .circle-item {
                     position: absolute;
-                    top: 50%;
-                    left: 0%;
-                    width: setResMo(30);
-                    height: setResMo(30);
-                    margin: setResMo(-15) 0 0 setResMo(-15);
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
 
-                    transform-origin: setResMo(156) setResMo(16);
+                    &--1 {
+                        animation: rotate 18s linear infinite;
+                        background : {
+                            image: url('#{$imagePath}/bg-planet-circle3-1.png');
+                            repeat: no-repeat;
+                            size: cover;
+                            position: 50% 50%;
+                        }
+                    }
+                    &--2 {
+                        background : {
+                            image: url('#{$imagePath}/bg-planet-circle3-2.png');
+                            repeat: no-repeat;
+                            size: cover;
+                            position: 50% 50%;
+                        }
+                        animation: rotate 15s linear infinite;
+                    }
+                }
+            }
+            .circle-small {
+                position: absolute;
+                bottom: setResMo(20);
+                left: setResMo(-42);
+                width: setResMo(106);
+                height: setResMo(106);
+                &:before {
+                    position: absolute;
+                    width: setResMo(106);
+                    height: setResMo(106);
+                    background : {
+                        image: url('#{$imagePath}/bg-planet-circle4.png');
+                        repeat: no-repeat;
+                        size: contain;
+                        position: 50% 50%;
+                    }
+                    content: '';
+                }
+                .circle-item {
+                    position: absolute;
+                    top: 0;
+                    left: 0%;
+                    width: 100%;
+                    height: 100%;
+
                     > span {
                         display: block;
                         width: 100%;
@@ -270,107 +297,21 @@
 
                     &--1 {
                         animation: rotate 18s linear infinite;
-                        > span {
-                            background : {
-                                image: url('#{$imagePath}/icon-planet4.svg');
-                                repeat: no-repeat;
-                                size: cover;
-                                position: 50% 0;
-                            }
-                            animation: rotate 8s linear infinite;
+                        background : {
+                            image: url('#{$imagePath}/bg-planet-circle4-1.png');
+                            repeat: no-repeat;
+                            size: cover;
+                            position: 50% 50%;
                         }
                     }
                     &--2 {
+                        background : {
+                            image: url('#{$imagePath}/bg-planet-circle4-2.png');
+                            repeat: no-repeat;
+                            size: cover;
+                            position: 50% 50%;
+                        }
                         animation: rotate 15s linear infinite;
-                        > span {
-                            background : {
-                                image: url('#{$imagePath}/icon-planet5.svg');
-                                repeat: no-repeat;
-                                size: cover;
-                                position: 50% 0;
-                            }
-                            animation: rotate 5s linear infinite;
-                        }
-                    }
-                    &--3 {
-                        animation: rotate 11s linear infinite;
-                        > span {
-                            background : {
-                                image: url('#{$imagePath}/icon-planet3.svg');
-                                repeat: no-repeat;
-                                size: cover;
-                                position: 50% 0;
-                            }
-                            animation: rotate 3s linear infinite;
-                        }
-                    }
-                }
-            }
-            .circle-small {
-                position: absolute;
-                bottom: setResMo(20);
-                left: setResMo(-42);
-                width: setResMo(100);
-                height: setResMo(100);
-                transform: rotate(90deg);
-                &:before {
-                    position: absolute;
-                    width: setResMo(100);
-                    height: setResMo(100);
-                    border: setResMo(2) solid rgba(255, 255, 255, 0.1);
-                    border-radius: 50%;
-                    content: '';
-                }
-                .circle-item {
-                    position: absolute;
-                    top: 50%;
-                    left: 0%;
-                    width: setResMo(20);
-                    height: setResMo(20);
-                    margin: setResMo(-10) 0 0 setResMo(-10);
-
-                    transform-origin: setResMo(61) setResMo(11);
-                    > span {
-                        display: block;
-                        width: 100%;
-                        height: 100%;
-                    }
-
-                    &--1 {
-                        animation: rotate 8s linear infinite;
-                        > span {
-                            background : {
-                                image: url('#{$imagePath}/icon-planet3.svg');
-                                repeat: no-repeat;
-                                size: cover;
-                                position: 50% 0;
-                            }
-                            animation: rotate 8s linear infinite;
-                        }
-                    }
-                    &--3 {
-                        animation: rotate 13s linear infinite;
-                        > span {
-                            background : {
-                                image: url('#{$imagePath}/icon-planet6.svg');
-                                repeat: no-repeat;
-                                size: cover;
-                                position: 50% 0;
-                            }
-                            animation: rotate 5s linear infinite;
-                        }
-                    }
-                    &--2 {
-                        animation: rotate 10s linear infinite;
-                        > span {
-                            background : {
-                                image: url('#{$imagePath}/icon-planet5.svg');
-                                repeat: no-repeat;
-                                size: cover;
-                                position: 50% 0;
-                            }
-                            animation: rotate 3s linear infinite;
-                        }
                     }
                 }
             }
@@ -392,19 +333,21 @@
                     position: absolute;
                     width: setResMo(180);
                     height: setResMo(180);
-                    border: setResMo(2) solid rgba(110, 89, 242, 0.3);
-                    border-radius: 50%;
+                    background : {
+                        image: url('#{$imagePath}/bg-planet-circle5.png');
+                        repeat: no-repeat;
+                        size: contain;
+                        position: 50% 50%;
+                    }
                     content: '';
                 }
                 .circle-item {
                     position: absolute;
-                    top: 50%;
+                    top: 0;
                     left: 0%;
-                    width: setResMo(30);
-                    height: setResMo(30);
-                    margin: setResMo(-15) 0 0 setResMo(-15);
+                    width: 100%;
+                    height: 100%;
 
-                    transform-origin: setResMo(106) setResMo(16);
                     > span {
                         display: block;
                         width: 100%;
@@ -412,40 +355,31 @@
                     }
 
                     &--1 {
-                        animation: rotate 18s linear infinite;
-                        > span {
-                            background : {
-                                image: url('#{$imagePath}/icon-planet4.svg');
-                                repeat: no-repeat;
-                                size: cover;
-                                position: 50% 0;
-                            }
-                            animation: rotate 18s linear infinite;
+                        background : {
+                            image: url('#{$imagePath}/bg-planet-circle5-1.png');
+                            repeat: no-repeat;
+                            size: cover;
+                            position: 50% 50%;
                         }
+                        animation: rotate 15s linear infinite;
                     }
                     &--2 {
-                        animation: rotate 11s linear infinite;
-                        > span {
-                            background : {
-                                image: url('#{$imagePath}/icon-planet5.svg');
-                                repeat: no-repeat;
-                                size: cover;
-                                position: 50% 0;
-                            }
-                            animation: rotate 8s linear infinite;
+                        background : {
+                            image: url('#{$imagePath}/bg-planet-circle5-2.png');
+                            repeat: no-repeat;
+                            size: cover;
+                            position: 50% 50%;
                         }
+                        animation: rotate 13s linear infinite;
                     }
                     &--3 {
-                        animation: rotate 15s linear infinite;
-                        > span {
-                            background : {
-                                image: url('#{$imagePath}/icon-planet7.svg');
-                                repeat: no-repeat;
-                                size: cover;
-                                position: 50% 0;
-                            }
-                            animation: rotate 3s linear infinite;
+                        background : {
+                            image: url('#{$imagePath}/bg-planet-circle5-3.png');
+                            repeat: no-repeat;
+                            size: cover;
+                            position: 50% 50%;
                         }
+                        animation: rotate 18s linear infinite;
                     }
                 }
             }
