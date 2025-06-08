@@ -94,13 +94,19 @@ function PageIndex() {
 
         $(videoElement).attr('src', _.videoList[videoSel]);
 
-        $(videoElement).on('canplay', function () {
+        videoElement.load();
+
+        $(videoElement).off('loadeddata ended');
+
+        $(videoElement).on('loadeddata', function () {
             videoElement.muted = true;
             videoElement.play();
             setTimeout(() => {
                 _.element.backgroundvideoWrap.addClass('on');
             }, 10);
         });
+
+        // 반복 재생
         $(videoElement).on('ended', function () {
             videoElement.play();
         });
