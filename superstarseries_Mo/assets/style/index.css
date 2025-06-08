@@ -629,6 +629,7 @@ html {
       position: absolute;
       top: 137rem;
       left: 50%;
+      z-index: 10;
       width: 12.6rem;
       height: 12.6rem;
       margin-left: -20rem; }
@@ -733,6 +734,7 @@ html {
       position: absolute;
       bottom: 159rem;
       left: 50%;
+      z-index: 10;
       width: 28rem;
       height: 28rem;
       margin-left: 15rem; }
@@ -837,6 +839,7 @@ html {
       position: absolute;
       bottom: 86rem;
       left: 50%;
+      z-index: 10;
       width: 18rem;
       height: 18rem;
       margin-left: -30rem; }

@@ -594,6 +594,7 @@ function PageIndex() {
     }
 
     function maybeCreateShootingStar() {
+        // 유성 최대 5개만 노출, 그 이하인 경우 0.5% 확률로 등장
         if (shootingStars.length < 5 && Math.random() < 0.005) {
             shootingStars.push(new ShootingStar());
         }
@@ -623,7 +624,7 @@ function PageIndex() {
         requestAnimationFrame(animate);
     }
 
-    // 리사이즈 최적화: 300px 이상 변화시에만 적용
+    // 리사이즈 최적화: 300px 이상 변화시에만 적용 (모바일 버벅임...)
     let lastResizeWidth = window.innerWidth;
 
     window.addEventListener('resize', () => {

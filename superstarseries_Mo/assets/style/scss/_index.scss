@@ -92,6 +92,7 @@
             position: absolute;
             top: setResMo(1370);
             left: 50%;
+            z-index: 10;
             width: setResMo(126);
             height: setResMo(126);
             margin-left: setResMo(-200);
@@ -235,6 +236,7 @@
             position: absolute;
             bottom: setResMo(1590);
             left: 50%;
+            z-index: 10;
             width: setResMo(280);
             height: setResMo(280);
             margin-left: setResMo(150);
@@ -377,6 +379,7 @@
             position: absolute;
             bottom: setResMo(860);
             left: 50%;
+            z-index: 10;
             width: setResMo(180);
             height: setResMo(180);
             margin-left: setResMo(-300);
