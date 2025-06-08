@@ -619,7 +619,11 @@
                             display: block;
                             width: setResMo(131);
                             height: setResMo(28);
-                            @include imageBg('icon-google.webp');
+                            > img {
+                                display: block;
+                                width: 100%;
+                                height: auto;
+                            }
                         }
                         .app {
                             display: block;

@@ -1037,11 +1037,11 @@ html {
             .contents .section--visual .visual-main .store__link .btn .google {
               display: block;
               width: 13.1rem;
-              height: 2.8rem;
-              background-image: url("./../images/icon-google.webp");
-              background-repeat: no-repeat;
-              background-size: contain;
-              background-position: 50% 50%; }
+              height: 2.8rem; }
+              .contents .section--visual .visual-main .store__link .btn .google > img {
+                display: block;
+                width: 100%;
+                height: auto; }
             .contents .section--visual .visual-main .store__link .btn .app {
               display: block;
               width: 12rem;
