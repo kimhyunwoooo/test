@@ -1045,11 +1045,11 @@ html {
             .contents .section--visual .visual-main .store__link .btn .app {
               display: block;
               width: 12rem;
-              height: 2.8rem;
-              background-image: url("./../images/icon-app.svg");
-              background-repeat: no-repeat;
-              background-size: contain;
-              background-position: 50% 50%; }
+              height: 2.8rem; }
+              .contents .section--visual .visual-main .store__link .btn .app > img {
+                display: block;
+                width: 100%;
+                height: auto; }
             .contents .section--visual .visual-main .store__link .btn .arrow {
               display: block;
               width: 2.4rem;

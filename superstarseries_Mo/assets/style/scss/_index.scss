@@ -629,7 +629,11 @@
                             display: block;
                             width: setResMo(120);
                             height: setResMo(28);
-                            @include imageBg('icon-app.svg');
+                            > img {
+                                display: block;
+                                width: 100%;
+                                height: auto;
+                            }
                         }
 
                         .arrow {
