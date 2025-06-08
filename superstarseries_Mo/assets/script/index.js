@@ -551,7 +551,7 @@ function PageIndex() {
 
             this.alpha = 1;
             this.frontStarSize = 80;
-            this.frontStarScale = Math.random() * 0.7 + 0.3; // 0.3 ~ 1.0배로 조정
+            this.frontStarScale = Math.random() * 1 + 0.3; // 0.3 ~ 1.3배로 조정
             this.rotation = 0;
             this.rotationSpeed = Math.random() * 0.1 - 0.05;
         }
@@ -601,20 +601,13 @@ function PageIndex() {
 
     function resetStars() {
         stars = Array.from({ length: 150 }, () => new Star());
-        bigStars = Array.from({ length: 10 }, () => new BigStar());
+        bigStars = Array.from({ length: 15 }, () => new BigStar());
     }
 
     function starInit() {
         starCanvasResize();
         resetStars();
         animate();
-    }
-
-    function maybeCreateShootingStar() {
-        // 유성 최대 5개만 노출, 그 이하인 경우 0.5% 확률로 등장
-        if (shootingStars.length < 5 && Math.random() < 0.005) {
-            shootingStars.push(new ShootingStar());
-        }
     }
 
     function maybeCreateShootingStar() {

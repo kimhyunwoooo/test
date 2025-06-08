@@ -628,7 +628,7 @@ html {
     transform: rotate(360deg); } }
     .contents .space .circle-wrap--type1 {
       position: absolute;
-      top: 137rem;
+      bottom: 273rem;
       left: 50%;
       z-index: 10;
       width: 14.6rem;
