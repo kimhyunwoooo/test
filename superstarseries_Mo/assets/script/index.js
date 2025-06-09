@@ -658,7 +658,7 @@ function PageIndex() {
     function onScrollWindow() {
         isActiveSection();
         setviewHeight(2);
-        if (!$('.header__menu').hasClass('header__menu--open')) {
+        if (!$('body').hasClass('page--fixed')) {
             setSpaceScroll();
         }
     }

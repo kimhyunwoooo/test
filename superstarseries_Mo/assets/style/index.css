@@ -1072,14 +1072,24 @@ html {
           background-position: 50% 50%; }
           .contents .section--game .game-img__wrap .game-section .game-screenshot--1 {
             background-image: url("./../images/info-screenshot-1.jpg"); }
+            html[lang='en'] .contents .section--game .game-img__wrap .game-section .game-screenshot--1 {
+              background-image: url("./../images/info-screenshot-1-en.jpg"); }
           .contents .section--game .game-img__wrap .game-section .game-screenshot--2 {
             background-image: url("./../images/info-screenshot-2.jpg"); }
+            html[lang='en'] .contents .section--game .game-img__wrap .game-section .game-screenshot--2 {
+              background-image: url("./../images/info-screenshot-2-en.jpg"); }
           .contents .section--game .game-img__wrap .game-section .game-screenshot--3 {
             background-image: url("./../images/info-screenshot-3.jpg"); }
+            html[lang='en'] .contents .section--game .game-img__wrap .game-section .game-screenshot--3 {
+              background-image: url("./../images/info-screenshot-3-en.jpg"); }
           .contents .section--game .game-img__wrap .game-section .game-screenshot--4 {
             background-image: url("./../images/info-screenshot-4.jpg"); }
+            html[lang='en'] .contents .section--game .game-img__wrap .game-section .game-screenshot--4 {
+              background-image: url("./../images/info-screenshot-4-en.jpg"); }
           .contents .section--game .game-img__wrap .game-section .game-screenshot--5 {
             background-image: url("./../images/info-screenshot-5.jpg"); }
+            html[lang='en'] .contents .section--game .game-img__wrap .game-section .game-screenshot--5 {
+              background-image: url("./../images/info-screenshot-5-en.jpg"); }
       .contents .section--game .game-img__wrap .swiper-nav {
         padding-top: 3.2rem; }
     .contents .section--series {
@@ -1596,7 +1606,7 @@ html {
             height: 100%;
             background: #000;
             content: '';
-            opacity: 0.5;
+            opacity: 0.7;
             transition: opacity 0.5s; }
         .contents .section--ssgo .ssgo-slide__wrap .ssgo-section--1 {
           background-image: url("./../images/img-superstargo-1.png"); }
@@ -1731,7 +1741,7 @@ html {
   width: 0;
   height: 0;
   box-sizing: border-box;
-  background: rgba(0, 0, 0, 0.8); }
+  background: rgba(0, 0, 0, 0.9); }
   .modal .modal__container {
     display: flex;
     flex-direction: column;

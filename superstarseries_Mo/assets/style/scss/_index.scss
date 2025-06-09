@@ -656,8 +656,10 @@
                         }
                         @for $i from 1 through 5 {
                             &--#{$i} {
-                                background: {
-                                    image: url('#{$imagePath}/info-screenshot-#{$i}.jpg');
+                                background-image: url('#{$imagePath}/info-screenshot-#{$i}.jpg');
+
+                                html[lang='en'] & {
+                                    background-image: url('#{$imagePath}/info-screenshot-#{$i}-en.jpg');
                                 }
                             }
                         }
@@ -1332,7 +1334,7 @@
                         height: 100%;
                         background: #000;
                         content: '';
-                        opacity: 0.5;
+                        opacity: 0.7;
                         transition: opacity 0.5s;
                     }
                 }
