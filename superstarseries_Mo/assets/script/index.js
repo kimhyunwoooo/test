@@ -437,23 +437,8 @@ function PageIndex() {
         starImages.push(img);
     });
 
-    // 큰 별 이미지 로드
-    const bigStarImages = [];
-    const bigImagePaths = ['./assets/images/big-star1.png', './assets/images/big-star2.png'];
-    let bigImagesLoaded = 0;
-
-    bigImagePaths.forEach(src => {
-        const img = new Image();
-        img.src = src;
-        img.onload = () => {
-            bigImagesLoaded++;
-            maybeStart();
-        };
-        bigStarImages.push(img);
-    });
-
     function maybeStart() {
-        if (imagesLoaded === imagePaths.length && bigImagesLoaded === bigImagePaths.length) {
+        if (imagesLoaded === imagePaths.length) {
             starInit();
         }
     }
@@ -484,41 +469,6 @@ function PageIndex() {
             ctx.save();
             ctx.globalAlpha = this.alpha;
             ctx.drawImage(this.image, this.x - size / 2, this.y - size / 2, size, size);
-            ctx.restore();
-        }
-    }
-
-    class BigStar {
-        constructor() {
-            this.reset();
-            this.rotation = 0;
-            this.rotationSpeed = 0.001 + Math.random() * 0.002;
-        }
-
-        reset() {
-            this.x = Math.random() * width;
-            this.y = Math.random() * height;
-            this.scale = Math.random() * 0.5 + 0.5;
-            this.image = bigStarImages[Math.floor(Math.random() * bigStarImages.length)];
-            this.alpha = Math.random() * 0.5 + 0.5;
-            this.alphaChange = (Math.random() * 0.002 + 0.001) * (Math.random() < 0.5 ? -1 : 1);
-        }
-
-        update() {
-            this.alpha += this.alphaChange;
-            if (this.alpha >= 1 || this.alpha <= 0.3) this.alphaChange *= -1;
-            this.rotation += this.rotationSpeed;
-        }
-
-        draw() {
-            const w = 84 * this.scale;
-            const h = 80 * this.scale;
-
-            ctx.save();
-            ctx.globalAlpha = this.alpha;
-            ctx.translate(this.x, this.y);
-            ctx.rotate(this.rotation);
-            ctx.drawImage(this.image, -w / 2, -h / 2, w, h);
             ctx.restore();
         }
     }
@@ -596,12 +546,10 @@ function PageIndex() {
     }
 
     let stars = [];
-    let bigStars = [];
     const shootingStars = [];
 
     function resetStars() {
         stars = Array.from({ length: 150 }, () => new Star());
-        bigStars = Array.from({ length: 15 }, () => new BigStar());
     }
 
     function starInit() {
@@ -623,11 +571,6 @@ function PageIndex() {
         stars.forEach(star => {
             star.update();
             star.draw();
-        });
-
-        bigStars.forEach(big => {
-            big.update();
-            big.draw();
         });
 
         for (let i = shootingStars.length - 1; i >= 0; i--) {

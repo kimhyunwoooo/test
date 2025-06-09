@@ -384,6 +384,66 @@
                 }
             }
         }
+
+        .star {
+            position: absolute;
+            left: 50%;
+            background: {
+                size: contain;
+                repeat: no-repeat;
+                position: 50% 50%;
+            }
+            &-pink--1 {
+                bottom: setResMo(3195);
+                width: setResMo(85);
+                height: setResMo(80);
+                margin-left: setResMo(75);
+                background: {
+                    image: url('#{$imagePath}/big-star1.png');
+                }
+                animation: starTwinkle 13s infinite ease-in-out;
+            }
+            &-pink--2 {
+                bottom: setResMo(2436);
+                width: setResMo(85);
+                height: setResMo(80);
+                margin-left: setResMo(-187);
+                background: {
+                    image: url('#{$imagePath}/big-star1.png');
+                }
+                animation: starTwinkle 13s infinite ease-in-out;
+            }
+            &-blue--1 {
+                bottom: setResMo(836);
+                width: setResMo(82);
+                height: setResMo(78);
+                margin-left: setResMo(84);
+                background: {
+                    image: url('#{$imagePath}/big-star2.png');
+                }
+                animation: starTwinkle 13s infinite ease-in-out;
+            }
+            &-blue--2 {
+                bottom: setResMo(154);
+                width: setResMo(37);
+                height: setResMo(36);
+                margin-left: setResMo(-179);
+                background: {
+                    image: url('#{$imagePath}/big-star2.png');
+                }
+                animation: starTwinkle 10s infinite ease-in-out;
+            }
+            &-blue--3 {
+                bottom: setResMo(117);
+                width: setResMo(61);
+                height: setResMo(58);
+                margin-left: setResMo(-154);
+                background: {
+                    image: url('#{$imagePath}/big-star2.png');
+                }
+                animation: starTwinkle 15s infinite ease-in-out;
+            }
+        }
     }
 
     .container {
@@ -1257,7 +1317,7 @@
         //.section-goods
 
         &--ssgo {
-            padding: setResMo(100) 0 setResMo(80);
+            padding: setResMo(100) 0 setResMo(44);
             .section__title {
                 margin-bottom: setResMo(23);
             }
